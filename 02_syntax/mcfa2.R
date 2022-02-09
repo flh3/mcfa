@@ -1,11 +1,11 @@
-alpha2 <- function(dat){
+alpha <- function(dat){
   covar <- dat[lower.tri(dat)] #get unique covariances
   n <- ncol(dat) #number of items in the scale
   al <- ((sum(covar) / length(covar)) * n^2 / sum(dat))
   cat("alpha:", return(al), "\n")   
 }
 
-mcfa.input2 <- function(gp, dat){
+mcfa.input <- function(gp, dat){
   dat1 <- dat[complete.cases(dat), ]
   g <- dat1[ ,gp] #grouping
   freq <- data.frame(table(g))
